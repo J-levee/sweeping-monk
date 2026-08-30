@@ -1,0 +1,13 @@
+.deploy/
+.anon_id
+.cloud_optin
+.optin
+.capture.lock
+.skill_edit_baseline.json
+.session_state.json
+.session_hook.lock
+signals-log.jsonl
+.uploaded_ids.txt
+.apply-snapshots
+__pycache__/
+*.pyc
