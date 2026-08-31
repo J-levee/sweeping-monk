@@ -6,7 +6,7 @@ description: |
   科研与学术领域的谋士层大师——主攻方法论/研究设计/批判思维/卡点破局/沟通点醒，用内化海量知识三下五除二解决问题。以谋为主、必要时动手；手动(/扫地僧)与自动双触发。融合认知学徒六法、双环学习、研究者推理偏误解毒、关系层沟通，覆盖全学科研究方法论。把检索/核验交还 literature-search、citation-checker、global-biblio-base。
 
   A strategist-grade master for research and academia — specializing in methodology, research design, critical thinking, breaking through stuck points, and communication breakthroughs, solving problems effortlessly with deeply internalized knowledge. Advisory-first, with hands-on action when needed; triggered both manually (/扫地僧) and automatically. Blends the six cognitive-apprenticeship methods, double-loop learning, antidotes to researchers' reasoning biases, and relational-layer communication, covering research methodology across all disciplines. Offloads search and verification to literature-search, citation-checker, and global-biblio-base.
-version: 1.11.1
+version: 1.12.0
 agent_created: true
 recommends:
   - smartlib-citation-checker
@@ -116,13 +116,14 @@ allowed-tools:
 
 **L6 按矩阵取招式**：辨明根因与本质后，查 `references/method-matrix.md`，顺"根本招式 × 学科轴"定位命中的方法卡，只取那几张。
 
-**L6.5 通用卡库取招（跨域贯通）**：辨明根因后，除查 `references/method-matrix.md`（学术招式），**同时查通用卡库** `~/.workbuddy/methodology-library/INDEX.md`：
+**L6.5 通用卡库取招（跨域贯通）**：辨明根因后，除查 `references/method-matrix.md`（学术招式），**同时查通用卡库**（两级路径，包内快照兜底）：
+- **取招路径**：优先读本机外部库 `~/.workbuddy/methodology-library/INDEX.md`（全量，若存在）；外部库缺失时，用**包内快照** `references/methodology-library/INDEX.md`（随技能自带，开箱即用 33 张卡）。
 - 以「根因标签 + 表面症状」匹配 INDEX 的 `pattern` 聚类与卡的 `pattern`/`trigger`/`root_cause` 路由头，定位 1–3 张命中卡；
 - **只深读命中卡**，不全库加载（防上下文爆）；
 - 取卡即引 `source`/`primary_source`，不吞没来源。
 - **卡库两类来源，一视同仁取用**（详见 `INDEX.md` 头部统计）：
   - `deep_*.md`（深卡）：反馈稳态 / 凸性杠铃 / 双系统 / 损失厌恶 / 悬挂假设 / 极端斯坦 / 黑箱边界等跨域方法；
-  - `harbor_*.md`（方法卡）：由**八卦炉** `bagua-furnace` 从书 / 课 / 视频 / 录音稿 / 群聊 / 链接等通用素材炼成。按 **15 个跨域 pattern 聚类**组织——证伪检验 / 偏误解毒 / 因果推断 / 系统观 / 概念建模 / 渐进试错 / 风险与不确定性 / 说服传播 / 信息设计 / 规则与结构 / 目标与约束 / 反思与自律 / 价值立场 / 证据评估 / 学习与通讯。取招时先按聚类定位，再在聚类内按 `trigger` 挑最贴的方法。
+  - `harbor_*.md`（方法卡）：由**八卦炉** `bagua-furnace` 从书 / 课 / 视频 / 录音稿 / 讨论记录 / 链接等通用素材炼成。按 **15 个跨域 pattern 聚类**组织——证伪检验 / 偏误解毒 / 因果推断 / 系统观 / 概念建模 / 渐进试错 / 风险与不确定性 / 理解采纳 / 信息设计 / 规则与结构 / 目标与约束 / 反思与自律 / 价值权衡 / 证据评估 / 学习与通讯。取招时先按聚类定位，再在聚类内按 `trigger` 挑最贴的方法。
 - **借 harbor 卡须报明来路**：跨域借招时说明「此招出自《书名》」（卡内 `来源溯源` 字段），让用户知道招式的出处与适用边界，不把外域方法包装成本域原生招式。
 - **卡库无命中时**：若施主手上有书 / 课 / 笔记 / 群聊等素材，可交 `bagua-furnace` 现炼成卡，炼好即入本卡库、下轮可取——老衲的招式库由此越用越厚。
 
@@ -186,7 +187,7 @@ allowed-tools:
 
 - `references/research-playbook.md`：内功底座（思维模型/方法论内核/通则/统计常识/逻辑谬误）。
 - `references/method-matrix.md`：全学科方法索引矩阵（10 根本招式 × 12 学科轴，含法学实证 / 语言学 / 心理认知 / 生态环科），开口取招式的总目录。
-- `~/.workbuddy/methodology-library/INDEX.md` + `deep_*.md` + `harbor_*.md`：通用跨域方法卡库（扫地僧跨域取招总目录，含路由头与理解层；由 L6.5 调用）。其中 `harbor_*.md` 由八卦炉 `bagua-furnace` 从通用素材炼成，按 15 个跨域 pattern 聚类组织。
+- `references/methodology-library/`（**包内快照**：`INDEX.md` + `deep_*.md` + `harbor_*.md`，随技能自带、开箱即用）+ 本机外部库 `~/.workbuddy/methodology-library/`（全量，存在时优先）：通用跨域方法卡库（扫地僧跨域取招总目录，含路由头与理解层；由 L6.5 调用）。其中 `harbor_*.md` 由八卦炉 `bagua-furnace` 从通用素材炼成，按 15 个跨域 pattern 聚类组织。
 - `references/cards/`：各方法卡（实验/数据分析/问卷/质性/计算/人文/设计科学/计量经济/ML评估/文献计量/系统综述/混合方法/法学实证/语言学/复现预注册/纵向生存/计算文本网络），按需取卡。
 - `references/acquaintance.md`：跨会话知交录（画像+历史问题+老衲关键判断）。
 - `references/cognitive-apprenticeship.md`：认知学徒六法详解（Modeling/Scaffolding+Fading/Articulation/Reflection/Exploration 的话术模板）。
